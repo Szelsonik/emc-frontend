@@ -35,6 +35,14 @@ const PatientsView = () => {
         })
     }, [])
 
+    if(currentUser.id.toString() === context.userUsername) {
+        if(currentUser.admin === 1 || currentUser.rpriv >= 10 || currentUser.rankid >= 1) {
+            
+        } else {
+            window.location = '/'
+        }
+    }
+
     const modUser = (acc) => {
         setOldUser(acc)
         setModifyUser(acc)
