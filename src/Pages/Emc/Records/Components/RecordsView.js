@@ -32,11 +32,11 @@ const RecordsView = () => {
     const [modRecord, setModRecord] = React.useState([])
 
     React.useEffect(() => {
-        axios.get('http://localhost:3001/api/user/info').then(res => {
+        axios.get('https://emc-web-panel.herokuapp.com/api/user/info').then(res => {
             setRecords(res.data)
         })
 
-        axios.get('http://localhost:3001/api/records/get').then(res => {
+        axios.get('https://emc-web-panel.herokuapp.com/api/records/get').then(res => {
             setRecordss(res.data)
         })
     }, [])
@@ -80,7 +80,7 @@ const RecordsView = () => {
         if(!content.accID || !content.phone || !content.insurance) {
             setOpen3(true)
         } else {
-            axios.post('http://localhost:3001/api/records/add', {accID: temps.accID, phone: temps.phone, insurance: insurance}).then(res => {
+            axios.post('https://emc-web-panel.herokuapp.com/api/records/add', {accID: temps.accID, phone: temps.phone, insurance: insurance}).then(res => {
                 setUsers(res.data)
                 
             })
@@ -92,7 +92,7 @@ const RecordsView = () => {
         if(!newContent.firstName || !newContent.lastName) {
             setOpen3(true)
         } else {
-            axios.post('http://localhost:3001/api/records/modify', {content, newContent}).then(res => {
+            axios.post('https://emc-web-panel.herokuapp.com/api/records/modify', {content, newContent}).then(res => {
 
             })
             window.location = '/emc/records'

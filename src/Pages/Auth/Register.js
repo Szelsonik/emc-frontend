@@ -40,7 +40,7 @@ const Register = () => {
         if(!regData.username || !values.password || !regData.discord) {
             setOpen(true)
         } else {
-            axios.post('http://localhost:3001/api/auth/register', { username: regData.username, password: values.password, discord: regData.discord}).then(res => {
+            axios.post('https://emc-web-panel.herokuapp.com/api/auth/register', { username: regData.username, password: values.password, discord: regData.discord}).then(res => {
             })
             window.location = '/auth'
         }

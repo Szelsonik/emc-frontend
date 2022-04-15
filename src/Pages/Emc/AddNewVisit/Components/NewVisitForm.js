@@ -14,7 +14,7 @@ const AddNewVisit = (props) => {
         if( !formData.firstName || !formData.lastName || !formData.age || !formData.cel || !formData.date ) {
             setOpen(true)
         } else {
-            axios.post('http://localhost:3001/api/visits/add', {formData, accID}).then(res => {
+            axios.post('https://emc-web-panel.herokuapp.com/api/visits/add', {formData, accID}).then(res => {
             })
             setOpen2(true)
             setTimeout(() => {

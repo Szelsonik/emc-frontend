@@ -12,7 +12,7 @@ const Acp = () => {
     let userInfo = []
 
     React.useEffect(() => {
-        axios.get('http://localhost:3001/api/user/info').then(res => {
+        axios.get('https://emc-web-panel.herokuapp.com/api/user/info').then(res => {
             setAllUsers(res.data)
         })
     }, [])
