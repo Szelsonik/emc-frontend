@@ -60,7 +60,6 @@ const PatientsView = () => {
                             <TableRow>
                                 <TableCell>Imię nazwisko</TableCell>
                                 <TableCell align="right">Data urodzenia</TableCell>
-                                <TableCell align="right">Numer telefonu</TableCell>
                                 <TableCell align="right">Nick OOC</TableCell>
                                 <TableCell align="right">Discord</TableCell>
                                 {
@@ -85,7 +84,6 @@ const PatientsView = () => {
                                         <TableRow sx={{ '&:last-child td, &:last-child th': { border: 0 } }} key={patient.username}>
                                             <TableCell component="th" scope="row">{patient.firstName ? `${patient.firstName} ${patient.lastName}` : `-`}</TableCell>
                                             <TableCell align="right">{patient.birthdate ? `${patient.birthdate}` : `-`}</TableCell>
-                                            <TableCell align="right">{patient.phone ? `${patient.phone}` : `-`}</TableCell>
                                             <TableCell align="right">{patient.username}</TableCell>
                                             <TableCell align="right">{patient.discord}</TableCell>
                                             {
