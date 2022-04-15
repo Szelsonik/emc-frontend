@@ -10,7 +10,7 @@ const SettingsView = (props) => {
     const userID = props.userID
 
     React.useEffect(() => {
-        axios.get('http://emcserver.ct8.pl:59999/api/records/get').then(res => {
+        axios.get('https://emcserver.ct8.pl:59999/api/records/get').then(res => {
             (res.data).map(user => {
                 if(user.id.toString() === userID) {
                     setCUser(user)
