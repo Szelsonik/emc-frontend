@@ -10,7 +10,7 @@ const SettingsView = (props) => {
     const userID = props.userID
 
     React.useEffect(() => {
-        axios.get('https://emc-web-panel.herokuapp.com/api/records/get').then(res => {
+        axios.get('http://emcserver.ct8.pl:59999/api/records/get').then(res => {
             (res.data).map(user => {
                 if(user.id.toString() === userID) {
                     setCUser(user)
@@ -24,7 +24,7 @@ const SettingsView = (props) => {
         if(!newContent.firstName || !newContent.lastName || !newContent.discord) {
             setOpen(true)
         } else {
-            axios.post('https://emc-web-panel.herokuapp.com/api/records/modify', { content, newContent }).then(res => {
+            axios.post('http://emcserver.ct8.pl:59999/api/records/modify', { content, newContent }).then(res => {
 
             })
             window.location.reload()

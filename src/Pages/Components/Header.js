@@ -26,7 +26,7 @@ const Header = (props) => {
     let avatarName = ''
 
     useEffect(() => {
-        axios.get('https://emc-web-panel.herokuapp.com/api/user/info').then(res => {
+        axios.get('http://emcserver.ct8.pl:59999/api/user/info').then(res => {
             setAllUsers(res.data)
         })
     }, [])

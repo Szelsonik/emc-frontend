@@ -35,7 +35,7 @@ const Login = () => {
     };
 
     const authLogin = () => {
-        axios.post('https://emc-web-panel.herokuapp.com/api/auth/login', { username: loginData.username, password: values.password }).then(res => {
+        axios.post('http://emcserver.ct8.pl:59999/api/auth/login', { username: loginData.username, password: values.password }).then(res => {
             if (res.data.status === 'success') {
                 setContext({ isUserLogged: 'true', userUsername: loginData.username })
                 localStorage.setItem('isUserLogged', 'true')
