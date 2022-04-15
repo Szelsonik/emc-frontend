@@ -29,19 +29,15 @@ const PatientsView = () => {
             setPatients(res.data)
             res.data.map(user => {
                 if(user.id.toString() === context.userUsername) {
-                    setCurrentUser(user)
+                    if(user.admin === 1 || user.rpriv >= 10 || user.rankid >= 1) {
+                        setCurrentUser(user)
+                    } else {
+                        window.location = '/'
+                    }
                 }
             })
         })
     }, [])
-
-    if(currentUser.id.toString() === context.userUsername) {
-        if(currentUser.admin === 1 || currentUser.rpriv >= 10 || currentUser.rankid >= 1) {
-            
-        } else {
-            window.location = '/'
-        }
-    }
 
     const modUser = (acc) => {
         setOldUser(acc)
