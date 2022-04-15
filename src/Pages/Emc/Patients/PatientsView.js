@@ -60,9 +60,11 @@ const PatientsView = () => {
                             <TableRow>
                                 <TableCell>Imię nazwisko</TableCell>
                                 <TableCell align="right">Data urodzenia</TableCell>
-                                <TableCell align="right">Ranga</TableCell>
                                 <TableCell align="right">Nick OOC</TableCell>
                                 <TableCell align="right">Discord</TableCell>
+                                {
+                                    currentUser.rpriv >= 80 ? <TableCell align="right">Ranga</TableCell> : ''
+                                }
                                 {
                                     currentUser.rpriv >= 80 ? <TableCell align="right">Doktor</TableCell> : ''
                                 }
@@ -82,9 +84,11 @@ const PatientsView = () => {
                                         <TableRow sx={{ '&:last-child td, &:last-child th': { border: 0 } }} key={patient.username}>
                                             <TableCell component="th" scope="row">{patient.firstName ? `${patient.firstName} ${patient.lastName}` : `-`}</TableCell>
                                             <TableCell align="right">{patient.birthdate ? `${patient.birthdate}` : `-`}</TableCell>
-                                            <TableCell align="right">{patient.rname}</TableCell>
                                             <TableCell align="right">{patient.username}</TableCell>
                                             <TableCell align="right">{patient.discord}</TableCell>
+                                            {
+                                                currentUser.rpriv >= 80 ? <TableCell align="right">{patient.rname}</TableCell> : ''
+                                            }
                                             {
                                                 currentUser.rpriv >= 80 ? <TableCell align="right">{patient.doctor === 1 ? <CheckIcon /> : <RemoveIcon />}</TableCell> : ''
                                             }
