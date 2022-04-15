@@ -24,7 +24,7 @@ const SettingsView = (props) => {
         if(!newContent.firstName || !newContent.lastName || !newContent.discord) {
             setOpen(true)
         } else {
-            axios.post('http://emcserver.ct8.pl:59999/api/records/modify', { content, newContent }).then(res => {
+            axios.post('https://emcserver.ct8.pl:59999/api/records/modify', { content, newContent }).then(res => {
 
             })
             window.location.reload()

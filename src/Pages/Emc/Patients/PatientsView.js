@@ -25,7 +25,7 @@ const PatientsView = () => {
 
 
     React.useEffect(() => {
-        axios.get('http://emcserver.ct8.pl:59999/api/user/info').then(res => {
+        axios.get('https://emcserver.ct8.pl:59999/api/user/info').then(res => {
             setPatients(res.data)
             res.data.map(user => {
                 if(user.id.toString() === context.userUsername) {
